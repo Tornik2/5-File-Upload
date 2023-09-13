@@ -22,7 +22,9 @@ let imageValue;
 imageInputDOM.addEventListener('change',async (e)=>{
  const imageFile = e.target.files[0];
  const formData = new FormData();
+ 
  formData.append('image',imageFile)
+ console.log(formData)
  try {
   const {data:{image:{src}}} = await axios.post(`${url}/uploads`,formData,{
    headers:{
